@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000">
+
+    <SeekBar
+        android:id="@+id/timerSeekBar"
+        android:maxWidth="300dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="#232323"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timerSeekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp">
+
+        <ProgressBar
+            android:id="@+id/timerProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="75"
+            android:progressDrawable="@drawable/cirular_shape"
+            android:secondaryProgress="100" />
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_00_30"
+            android:layout_centerInParent="true"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/trashImage"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/ic_baseline_restore_from_trash_24"
+        android:contentDescription="@string/trash"
+        android:layout_below="@id/relativeLayoutImage"
+        android:layout_toStartOf="@id/playImage"
+        android:onClick="trashImageClick"/>
+
+    <ImageView
+        android:id="@+id/playImage"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+        android:contentDescription="@string/play_arrow"
+        android:layout_below="@id/relativeLayoutImage"
+        android:layout_centerHorizontal="true"
+        android:onClick="playImageClick"/>
+
+    <ImageView
+        android:id="@+id/addTimeImage"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/ic_baseline_add_alarm_24"
+        android:contentDescription="@string/add_time"
+        android:layout_below="@id/relativeLayoutImage"
+        android:layout_toEndOf="@id/playImage"
+        android:onClick="addTimeImageClick"/>
+
+
+</RelativeLayout>
